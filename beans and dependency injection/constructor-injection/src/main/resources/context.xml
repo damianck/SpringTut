@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="logger" class="com.springtutorial.pl.implementation.LoggerImpl">
+		<property name="name" value="logger" />
+		<property name="version" value="1" />
+	</bean>
+
+	<bean id="user"
+		class="com.springtutorial.pl.implementation.UsersRepositoryImpl">
+		<constructor-arg index="0" ref="logger"></constructor-arg>
+		<constructor-arg index="1" value="https://127.0.0.1:1234"></constructor-arg>
+		<constructor-arg index="2" value="db"></constructor-arg>
+	</bean>
+
+</beans>
